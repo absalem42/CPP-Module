@@ -1,13 +1,13 @@
 #include "Fixed.hpp"
-#include <iostream>
-#include <ostream>
+// #include <iostream>
+// #include <ostream>
 
 int main( void ) {
 	Fixed a;
-	Fixed const b( 1000000 );
-	// Fixed const c( 42.42f );
+	Fixed const b(123);
+	Fixed const c(42.4242421f);
 	// Fixed const d( b );
-
+	std::cout << "b is " << c << std::endl;
 	// a = Fixed( 1234.4321f );
 
 	// std::cout << "a is " << a << std::endl;

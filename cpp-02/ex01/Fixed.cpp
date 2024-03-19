@@ -9,13 +9,13 @@ Fixed::Fixed(const int intNumber)
 {
     std::cout << "Int constructor called" << std::endl;
     fixedPoint = intNumber * (1 << fractionalBits);
-    std::cout << "value f: " << fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const float floatNumber)
 {
     std::cout << "Float constructor called" << std::endl;
 	fixedPoint = roundf(floatNumber * (1 << fractionalBits));
+    // std::cout << "value f: " << fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const Fixed& copy)
