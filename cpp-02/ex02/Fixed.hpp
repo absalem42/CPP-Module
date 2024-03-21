@@ -42,10 +42,10 @@ public:
     Fixed operator--(int); 
 
     // static member functions
-	static Fixed	&min(Fixed &fixed1, Fixed &fixed2);
-	static const Fixed	&min(const Fixed &fixed1, const Fixed &fixed2);
-	static Fixed	&max(Fixed &fixed1, Fixed &fixed2);
-	static const Fixed	&max(const Fixed &fixed1, const Fixed &fixed2);
+	static Fixed&   min(Fixed &fixed1, Fixed &fixed2);
+	static const Fixed& min(const Fixed &fixed1, const Fixed &fixed2);
+	static Fixed&   max(Fixed &fixed1, Fixed &fixed2);
+	static const Fixed& max(const Fixed &fixed1, const Fixed &fixed2);
 
 };
 

@@ -126,12 +126,7 @@ Fixed Fixed::operator--(int) { // Post-decrement
     return temp;
 }
 
-Fixed	&Fixed::min(Fixed &fixed1, Fixed &fixed2)
-{
-	return (fixed1 < fixed2 ? fixed1 : fixed2);
-}
-
-const Fixed	&Fixed::min(const Fixed &fixed1, const Fixed &fixed2)
+Fixed&  Fixed::min(Fixed &fixed1, Fixed &fixed2)
 {
 	if (fixed1.getFixedPoint() < fixed2.getFixedPoint())
 		return (fixed1);
@@ -139,12 +134,23 @@ const Fixed	&Fixed::min(const Fixed &fixed1, const Fixed &fixed2)
 	 	return (fixed2);
 }
 
-Fixed	&Fixed::max(Fixed &fixed1, Fixed &fixed2)
+const Fixed&    Fixed::min(const Fixed &fixed1, const Fixed &fixed2)
 {
-	return (fixed1 > fixed2 ? fixed1 : fixed2);
+	if (fixed1.getFixedPoint() < fixed2.getFixedPoint())
+		return (fixed1);
+	else
+	 	return (fixed2);
 }
 
-const Fixed	&Fixed::max(const Fixed &fixed1, const Fixed &fixed2)
+Fixed&  Fixed::max(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1.getFixedPoint() > fixed2.getFixedPoint())
+		return (fixed1);
+	else
+	 	return (fixed2);
+}
+
+const Fixed&    Fixed::max(const Fixed &fixed1, const Fixed &fixed2)
 {
 	if (fixed1.getFixedPoint() > fixed2.getFixedPoint())
 		return (fixed1);
