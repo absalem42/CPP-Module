@@ -4,8 +4,8 @@ FragTrap::FragTrap() : ClapTrap()
 {
     name = "Default";
     hitPoints = 100;
-    energyPoints = 50;
-    attackDamage = 20;
+    energyPoints = 100;
+    attackDamage = 30;
     std::cout << "Default FragTrap is created" << std::endl;
 }
 
@@ -13,8 +13,8 @@ FragTrap::FragTrap(const std::string &newName) : ClapTrap(newName)
 {
 	name = newName;
 	hitPoints = 100;
-    energyPoints = 50;
-    attackDamage = 20;
+    energyPoints = 100;
+    attackDamage = 30;
     std::cout << "Constructor called. Welcome, FragTrap " << name << "!" << std::endl;
 }
 
