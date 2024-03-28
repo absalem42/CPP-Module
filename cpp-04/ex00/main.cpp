@@ -1,8 +1,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 
 int main()
@@ -20,21 +20,21 @@ int main()
 	// Call makeSound() for both Dog and Cat and Animal
     i->makeSound(); // Output: Meow! 😺
     j->makeSound(); // Output: Bark! 🐶
-	
-
+	    meta->makeSound(); // Output: Generic animal sound 🐾
+	delete i;
+	delete j;
+	delete meta;
 	// Call makeSound() for the base class
-    meta->makeSound(); // Output: Generic animal sound 🐾
 
-	// const WrongAnimal	*meta2 = new WrongAnimal();
-	// const WrongAnimal	*i2 = new WrongCat();
 
-	// meta2->makeSound(); // Output: Generic WrongAnimal sound 🐾
-	// i2->makeSound(); // Output: Generic WrongAnimal sound 🐾
+	const WrongAnimal	*meta2 = new WrongAnimal();
+	const WrongAnimal	*i2 = new WrongCat();
 
-	// delete i2;
-	// delete meta2;
+	meta2->makeSound(); // Output: Generic WrongAnimal sound 🐾
+	i2->makeSound(); // Output: Generic WrongAnimal sound 🐾
 
-	// delete i;
-	// delete j;
-	// delete meta;
+	delete i2;
+	delete meta2;
+
+
 }

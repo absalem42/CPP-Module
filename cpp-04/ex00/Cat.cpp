@@ -1,8 +1,8 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("")
+Cat::Cat() : Animal()
 {
-    type = "";
+    type = "Cat";
     std::cout << "Default constructor of Cat is called" << std::endl;
 }
 
@@ -25,10 +25,10 @@ Cat& Cat::operator=(const Cat& other)
 
 Cat::~Cat()
 {
-    std::cout << "Cat " << type << " is destroyed" << std::endl;
+    std::cout << "Cat is destroyed" << std::endl;
 }
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat make sound" << std::endl;
+    std::cout << "Cat meows" << std::endl;
 }

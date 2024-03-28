@@ -1,11 +1,12 @@
 #include "Animal.hpp"
 
-Animal::Animal() : type("") 
+Animal::Animal() 
 {
     std::cout << "Default constructor of Animal is called" << std::endl;
+    type = "Default";
 }
 
-Animal::Animal(const std::string& type) : type(type)
+Animal::Animal(const std::string& type) 
 {
     std::cout << "Animal " << type << " is created" << std::endl;
     this->type = type;

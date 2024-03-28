@@ -1,9 +1,9 @@
 #include "Dog.hpp"
 
 
-Dog::Dog() : Animal("")
+Dog::Dog() : Animal()
 {
-    type = "";
+    type = "Dog";
     std::cout << "Default constructor of Dog is called" << std::endl;
 }
 
@@ -26,10 +26,10 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
-    std::cout << "Dog " << type << " is destroyed" << std::endl;
+    std::cout << "Dog is destroyed" << std::endl;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "Dog make sound" << std::endl;
+    std::cout << "Dog barks" << std::endl;
 }
