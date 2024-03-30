@@ -16,6 +16,7 @@ class Cat : public Animal{
         virtual ~Cat();
 
         void makeSound() const;
+        Brain *getBrain() const;
 };
 
 

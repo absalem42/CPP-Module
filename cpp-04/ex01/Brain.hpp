@@ -16,7 +16,8 @@ public:
 	Brain	&operator=(const Brain &other);
 	~Brain();
 
-
+	std::string	getIdea(int i) const;
+    std::string setIdea(int i, std::string idea);
 
 };
 
