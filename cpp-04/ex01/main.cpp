@@ -20,4 +20,16 @@ int main()
 
 	for (int i = 0; i < numAnimals; i++)
 		delete ptrs[numAnimals - 1 - i];
+
+	// Dog originalDog("Golden Retriever");
+
+    // Dog copiedDog = originalDog;
+
+    // copiedDog.getBrain()->setIdea(0, "Modified Idea");
+
+    // if (originalDog.getBrain()->getIdea(0) != copiedDog.getBrain()->getIdea(0)) {
+    //     std::cout << "Deep copy test passed: " << std::endl;
+    // } else {
+    //     std::cout << "Deep copy test failed: " << std::endl;
+    // }
 }
