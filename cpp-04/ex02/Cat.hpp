@@ -13,7 +13,7 @@ class Cat : public Animal{
         Cat(const std::string& type);
         Cat(const Cat& other);
         Cat& operator=(const Cat& other);
-        virtual ~Cat();
+        ~Cat();
 
         void makeSound() const;
         Brain *getBrain() const;

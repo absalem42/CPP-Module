@@ -13,7 +13,7 @@ class Dog : public Animal{
         Dog(const std::string& type);
         Dog(const Dog& other);
         Dog& operator=(const Dog& other);
-        virtual ~Dog();
+        ~Dog();
 
         Brain	*getBrain() const;
         void makeSound() const;
