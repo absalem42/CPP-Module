@@ -28,6 +28,7 @@ class Bureaucrat{
         int getGrade();
         void increment();
         void decrement();
+        void signForm();
 };
 
     std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat);
