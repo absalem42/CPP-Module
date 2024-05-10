@@ -16,7 +16,7 @@ int Bureaucrat::getGrade()
     return(this->grade);
 }
 
-Bureaucrat::Bureaucrat() : name("default") , grade(1) {}
+Bureaucrat::Bureaucrat() : name("default") , grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) 
 {
@@ -68,3 +68,18 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "Grade too low";
 }
+
+void	Bureaucrat::signForm(Form &other)
+{
+	try
+	{
+		other.beSigned(*this);
+		std::cout << name << " signed " << other.getName() << std::endl;
+
+	}
+	catch(std::exception &e)
+	{
+		std::cout << name << " couldn't sign " << other.getName() << " because: " << e.what() << std::endl;
+	}
+}
+
