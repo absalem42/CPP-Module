@@ -1,0 +1,41 @@
+#include "ShrubberyCreationForm.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <fstream>
+
+ShrubberyCreationForm::ShrubberyCreationForm()
+	: AForm("ShrubberyCreationForm", 145, 137), target("Default") {}
+
+
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
+	: AForm("ShrubberyCreationForm", 145, 137), target(target) {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
+	: AForm(other.getName(), other.getSignGrade(), other.getExecuteGrade()), target(other.target) {}
+
+ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+{
+	if (this != &other)
+	{
+		AForm::operator=(other);
+		target = other.target;
+	}
+	return (*this);
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
+{
+	AForm::execute(executor);
+
+	std::ofstream file((target + "_shrubbery").c_str());
+	if(!file.is_open())
+		throw FormFileException();
+	
+	file << "ASCII trees";
+    file.close();
+
+	
+
+}
