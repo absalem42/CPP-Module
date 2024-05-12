@@ -24,26 +24,41 @@ const char*   Intern::UnknownFormNameException::what() const throw()
 	return "Unknown form name";
 }
 
+AForm *Intern::makePresidentialPardonForm(const std::string formTarget)
+{
+	return (new PresidentialPardonForm(formTarget));
+}
+
+AForm *Intern::makeRobotomyRequestForm(const std::string formTarget)
+{
+	return (new RobotomyRequestForm(formTarget));
+}
+
+AForm *Intern::makeShrubberyCreationForm(const std::string formTarget)
+{
+	return (new ShrubberyCreationForm(formTarget));
+}
+
 AForm* Intern::makeForm(const std::string& formName, const std::string& formTarget)
 {
-  std::string names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-  for (int i = 0; i < 3; i++)
-  {
-    if (formName == names[i])
+    AForm*(Intern::*formFuncs[])(const std::string) = 
     {
-      std::cout << "Intern creates " << names[i] << " form" << std::endl;
-      switch (i)
-      {
-        case 0:
-          return new ShrubberyCreationForm(formTarget);
-        case 1:
-          return new RobotomyRequestForm(formTarget);
-        case 2:
-          return new PresidentialPardonForm(formTarget);
-        default:
-          return NULL;
-      }
-    }
-  }
-  throw UnknownFormNameException();
+		&Intern::makeRobotomyRequestForm,
+		&Intern::makeRobotomyRequestForm,
+		&Intern::makeShrubberyCreationForm
+	};
+	
+	std::string names[] = {
+		"presidential pardon", "robotomy request", "shrubbery creation"
+	};
+	
+	for (int i = 0; i < 3; i++)
+	{
+		if (names[i] == formName)
+        {
+            std::cout << "Intern creates " << formName << " form" << std::endl;
+			return (this->*(formFuncs[i]))(formTarget);
+        }
+	}
+	return (NULL);
 }
