@@ -10,17 +10,17 @@ int main(void)
 {
 	try
 	{
-		Bureaucrat	bureaucrat("john", 42);
+		Bureaucrat	bureaucrat("john", 40);
 		std::cout << bureaucrat;
 		
-		// #=========== ShrubberyCreationForm =======#
+
 		ShrubberyCreationForm	shrubbery("Home");
 		std::cout << shrubbery;
 
 		bureaucrat.signAForm(shrubbery);
 		bureaucrat.executeForm(shrubbery);
 
-		// #=========== RobotomyRequestForm =======#
+
 		// RobotomyRequestForm	robotomy("Robot");
 		// std::cout << robotomy;
 
@@ -28,7 +28,6 @@ int main(void)
 		// bureaucrat.executeAForm(robotomy);
 
 
-		// #=========== PresidentialPardonForm =======#
 		// PresidentialPardonForm	presidential("President");
 		// std::cout << presidential;
 

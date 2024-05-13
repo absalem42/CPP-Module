@@ -3,9 +3,9 @@
 
 int main() {
     try {
-        Bureaucrat b("John", 41);
+        Bureaucrat b("John", 45);
 
-        Form f("Form1", 40, 30);
+        Form f("Form1", 44, 30);
 
         std::cout << b << std::endl;
         std::cout << f << std::endl;
@@ -27,4 +27,3 @@ int main() {
 
     return 0;
 }
-
