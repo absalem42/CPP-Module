@@ -20,7 +20,10 @@ class BitcoinExchange
     
         std::map<std::string, float> map;
         // void loadDatabase(const std::string& filename);
-        // float customStof(const std::string& str) const;
+        float customStof(const std::string& str) const;
+        bool validKey(const std::string& key);
+        bool validDate(const std::string& date) const;
+        bool isLeapYear(int year) const;
     
     public:
     
@@ -31,7 +34,7 @@ class BitcoinExchange
 
         void loadData(const std::string& data);
         void printMap();
-
+        void exchange(const std::string& string);
         // BitcoinExchange(const std::string& dbFilename);
 
         // void processInput(const std::string& inputFilename) const;
