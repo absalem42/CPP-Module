@@ -25,15 +25,16 @@ public:
     PmergeMe(const PmergeMe& other);
     ~PmergeMe();
 
-    static void mergeInsertSort(std::vector<int>& data);
-    static void mergeInsertSort(std::list<int>& data);
     static void printVector(const std::vector<int>& data);
     static void printList(const std::list<int>& data);
-    static void measureSortTime(const std::vector<int>& input, const std::string& containerName);
+
+
 
     
 };
 
+void mergeInsertionSort(std::vector<int>& unsortedList);
+void mergeInsertionSort(std::list<int>& unsortedList);
 
 
 

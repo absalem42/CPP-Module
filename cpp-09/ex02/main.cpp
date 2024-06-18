@@ -1,8 +1,11 @@
 #include "PmergeMe.hpp"
 
-bool isPositiveInteger(const char* str) {
-    for (int i = 0; str[i] != '\0'; ++i) {
-        if (!isdigit(str[i])) {
+bool isPositiveInteger(const char* str) 
+{
+    for (int i = 0; str[i] != '\0'; ++i) 
+    {
+        if (!isdigit(str[i])) 
+        {
             return false;
         }
     }
@@ -31,18 +34,18 @@ int main(int argc, char **argv)
         lst.push_back(num);
     }
 
-        std::cout << "Before: ";
+    std::cout << "Before: ";
     PmergeMe::printVector(vec);
 
     // Timing the sort for std::vector
     clock_t start_vec = clock();
-    PmergeMe::mergeInsertSort(vec);
+    mergeInsertionSort(vec);
     clock_t end_vec = clock();
     double elapsed_vec = static_cast<double>(end_vec - start_vec) / CLOCKS_PER_SEC;
 
-    // Timing the sort for std::list
+
     clock_t start_lst = clock();
-    PmergeMe::mergeInsertSort(lst);
+    mergeInsertionSort(lst);
     clock_t end_lst = clock();
     double elapsed_lst = static_cast<double>(end_lst - start_lst) / CLOCKS_PER_SEC;
 
