@@ -4,6 +4,21 @@ This repository contains a collection of C++ programming exercises, organized in
 
 Feel free to explore the different modules and their respective exercises.
 
+## Table of Contents
+- [Project Structure](#project-structure)
+- [Module Overview](#module-overview)
+  - [Module 00: Basics, Namespaces, Classes, and I/O Streams](#module-00-basics-namespaces-classes-and-io-streams)
+  - [Module 01: Memory Allocation, Pointers, References, and File I/O](#module-01-memory-allocation-pointers-references-and-file-io)
+  - [Module 02: Ad-hoc Polymorphism and Canonical Classes](#module-02-ad-hoc-polymorphism-and-canonical-classes)
+  - [Module 03: Inheritance](#module-03-inheritance)
+  - [Module 04: Subtype Polymorphism, Abstract Classes, and Interfaces](#module-04-subtype-polymorphism-abstract-classes-and-interfaces)
+  - [Module 05: Exceptions and Advanced Class Design](#module-05-exceptions-and-advanced-class-design)
+  - [Module 06: C++ Casts and Data Serialization](#module-06-c-casts-and-data-serialization)
+  - [Module 07: C++ Templates](#module-07-c-templates)
+  - [Module 08: Standard Template Library (STL) - Containers and Algorithms](#module-08-standard-template-library-stl---containers-and-algorithms)
+  - [Module 09: Advanced STL Usage and Algorithms](#module-09-advanced-stl-usage-and-algorithms)
+- [How to Compile and Run](#how-to-compile-and-run)
+
 ## Project Structure
 
 The exercises are organized into modules, each contained within a directory named `cpp-XX`, where `XX` is the module number (e.g., `cpp-00`, `cpp-01`).
@@ -69,3 +84,55 @@ This module explores different types of C++ casts and basic data serialization c
 *   **ex00: Convert:** Implements a static `ScalarConverter` class that takes a string literal representing a char, int, float, or double. It then attempts to convert this literal to all four scalar types, printing the results and handling impossible conversions or special values (e.g., `nan`, `inf`). This exercise heavily utilizes C++ casts.
 *   **ex01: Serialization:** Introduces basic serialization by implementing a `Serializer` class with static methods to convert a pointer to a custom data structure to `uintptr_t` and back, typically using `reinterpret_cast`.
 *   **ex02: Identify real type:** Focuses on runtime type identification. It involves a base class `Base` and derived classes `A`, `B`, and `C`. The goal is to write functions that can identify the actual instantiated type of an object when given a `Base*` or `Base&`, primarily using `dynamic_cast`.
+
+### Module 07: C++ Templates
+
+This module introduces C++ templates, allowing for generic programming.
+*   **ex00: Whatever:** Implements simple template functions such as `swap`, `min`, and `max` that can operate on arguments of any type that supports the necessary comparison or assignment operations.
+*   **ex01: Iter:** Features a template function `iter` that takes an array, its length, and a function. It applies the given function to each element of the array. This demonstrates how templates can be used for generic algorithms.
+*   **ex02: Array:** Requires the creation of a class template `Array` that mimics the behavior of a standard array but is dynamically allocated. It must implement element access via the `[]` operator and handle out-of-bounds access by throwing an exception.
+
+### Module 08: Standard Template Library (STL) - Containers and Algorithms
+
+This module focuses on using the C++ Standard Template Library, particularly its containers, iterators, and algorithms.
+*   **ex00: Easyfind:** Implements a template function `easyfind` that searches for a given integer value within various STL sequence containers (like `std::vector`, `std::deque`, `std::list`). It returns an iterator to the first occurrence or throws an exception if the value is not found.
+*   **ex01: Span:** Involves creating a `Span` class capable of storing a predefined maximum number of integers. The class should support adding numbers individually or from a range of iterators and include methods to calculate the shortest and longest spans (differences) between any two numbers in its storage. This exercise encourages the use of STL algorithms.
+*   **ex02: MutantStack:** Requires the creation of a `MutantStack` class. This class adapts an STL stack (or underlying container like `std::deque`) to provide iterator support, allowing users to iterate over the stack's elements, a feature not directly available in `std::stack`.
+
+### Module 09: Advanced STL Usage and Algorithms
+
+This module presents more complex challenges that require a good understanding of STL containers, algorithms, and data processing techniques.
+*   **ex00: Bitcoin Exchange:** Implements a program to calculate the value of Bitcoin holdings on specific dates. It involves reading and parsing a CSV file of historical Bitcoin price data and processing an input file containing dates and values to multiply. This heavily uses STL containers like `std::map` for efficient data lookup and file stream operations.
+*   **ex01: Reverse Polish Notation (RPN) Calculator:** Requires the creation of a calculator that evaluates expressions written in Reverse Polish Notation. This typically involves parsing the input string and using `std::stack` to perform the calculations.
+*   **ex02: PmergeMe:** Implements the Ford-Johnson merge-insertion sort algorithm for two different STL containers (e.g., `std::vector` and `std::list` or `std::deque`). The exercise also involves comparing the performance of this custom sort against the standard `std::sort` (or list's sort method).
+
+## How to Compile and Run
+
+Each exercise within a module (e.g., `cpp-00/ex00/`) contains its own `Makefile`.
+
+To compile an exercise:
+1.  Navigate to the specific exercise directory:
+    ```bash
+    cd cpp-XX/exYY
+    ```
+    (Replace `XX` with the module number and `YY` with the exercise number).
+2.  Run the `make` command:
+    ```bash
+    make
+    ```
+    This will typically produce an executable file in the same directory. The name of the executable may vary depending on the exercise (e.g., `megaphone`, `phonebook`, `fixed`, `animal`, etc.).
+
+To run the compiled exercise:
+1.  Execute the program from within its directory:
+    ```bash
+    ./<executable_name>
+    ```
+    (Replace `<executable_name>` with the actual name of the compiled program).
+
+Some exercises might require specific command-line arguments. Refer to the exercise's subject or source code for such details.
+
+To clean up compiled files:
+```bash
+make fclean
+```
+This command is generally available in the Makefiles to remove the executable and any object files.
